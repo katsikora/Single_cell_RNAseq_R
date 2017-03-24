@@ -1,4 +1,10 @@
 #############################PLOT AND FACET FUNCTION#############################################
+#Extends functionality of plotexptsne from RaceID(2) package to include faceting by a categorical variable of interest
+#scobject is SCseq object as from RaceID(2)
+#genestring is character string matching rows of ndata slot in scobject to plot gene expression for
+#genetitle is character string to use as plot tile
+#facetvar is a character string with a categorical variable describing the cells, in the same order as rownames of scobject@tsne
+#logsc is a logical string to switch between direct count plotting and log2 count plotting
 plotexptsne_facet<-function(scobject,genestring,genetitle,facetvar,logsc=FALSE){
     require(dplyr)
     require(scales)
