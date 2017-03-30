@@ -42,7 +42,7 @@ annotate_DEG_list<-function(monocleObject,monocleDEGtable,groupingVar,mincount){
     exp.dat.filt<-as.matrix(monocleObject)
     tabz<-data.frame(matrix(nrow=nrow(monocleDEGtable),ncol=9))
     gVu<-unique(as.character(pData(monocleObject)[,groupingVar]))
-    colnames(tabz)<-c(paste0("Expr.",gVu[1]),paste0("Expr.",gVu[2]),paste0("NCells2.",gVu[1]),paste0("NCells2.",gVu[2]),"log2FC","GeneSym",paste0("Expr.",gVu[1],".iC"),paste0("Expr.",gVu[2],".iC","log2FC.iC")
+    colnames(tabz)<-c(paste0("Expr.",gVu[1]),paste0("Expr.",gVu[2]),paste0("NCells2.",gVu[1]),paste0("NCells2.",gVu[2]),"log2FC","GeneSym",paste0("Expr.",gVu[1],".iC"),paste0("Expr.",gVu[2],".iC","log2FC.iC"))
     exp.A<-exp.dat.filt[,colnames(exp.dat.filt) %in% as.character(pData(monocleObject)$SampleID)[as.character(pData(monocleObject)[,groupingVar]) %in% gVu[1]]]
     exp.B<-exp.dat.filt[,colnames(exp.dat.filt) %in% as.character(pData(monocleObject)$SampleID)[as.character(pData(monocleObject)[,groupingVar]) %in% gVu[2]]]
     for( k in seq_along(1:nrow(monocleDEGtable))){
